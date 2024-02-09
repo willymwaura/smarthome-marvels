@@ -28,16 +28,16 @@
 				<div class="row">
 					<div class="col-md-6 d-flex align-items-center">
 						<p class="mb-0 phone pl-md-2">
-							<a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +254 716432994</a> 
-							<a href="#"><span class="fa fa-paper-plane mr-1"></span> psychhouseholds@gmail.com</a>
+							<a href="tel:+254716432994" class="mr-2"><span class="fa fa-phone mr-1"></span>+254 716432994</a> 
+							<a href="mailto:psychhouseholds@gmail.com"><span class="fa fa-paper-plane mr-1"></span>psychhouseholds@gmail.com</a>
 						</p>
 					</div>
 					<div class="col-md-6 d-flex justify-content-md-end">
 						<div class="social-media mr-4">
 			    		<p class="mb-0 d-flex">
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+			    			<a href="https://www.facebook.com/profile.php?id=61553875617499&mibextid=ZbWKwL" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+			    			<a href="https://www.instagram.com/psych_households?igsh=MXM5MzQweHdkNm9udA==" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+			    			
 			    		</p>
 		        </div>
 		        <div class="reg">
@@ -48,42 +48,23 @@
 			</div>
 		</div>
     
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Psych <span>Household Products</span></a>
-	      <div class="order-lg-last btn-group">
-          <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          	<span class="flaticon-shopping-bag"></span>
-          	<div class="d-flex justify-content-center align-items-center"><small>3</small></div>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right">
-				    <div class="dropdown-item d-flex align-items-start" href="#">
-				    	<div class="img" style="background-image: url(img/dispenser.jpg.jfif);"></div>
-				    	<div class="text pl-3">
-				    		<h4>Electric Water Pump</h4>
-				    		<p class="mb-0"><a href="#" class="price">Ksh 999/=</a><span class="quantity ml-3">Quantity: 01</span></p>
-				    	</div>
-				    </div>
-				    <div class="dropdown-item d-flex align-items-start" href="#">
-				    	<div class="img" style="background-image: url(img/bg-households-1.jpg-removebg-preview.png);"></div>
-				    	<div class="text pl-3">
-				    		<h4>Kitchen Cookware</h4>
-				    		<p class="mb-0"><a href="#" class="price">Ksh 19800/=</a><span class="quantity ml-3">Quantity: 02</span></p>
-				    	</div>
-				    </div>
-				    <div class="dropdown-item d-flex align-items-start" href="#">
-				    	<div class="img" style="background-image: url(img/multilayershoerack.jpg.jfif);"></div>
-				    	<div class="text pl-3">
-				    		<h4>Multi-layered Shoerack</h4>
-				    		<p class="mb-0"><a href="#" class="price">Ksh 2000/= -2800/=</a><span class="quantity ml-3">Quantity: 03</span></p>
-				    	</div>
-				    </div>
-				    <a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
-				    	View All
-				    	<span class="ion-ios-arrow-round-forward"></span>
-				    </a>
-				  </div>
-        </div>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">Psych <span>Household <span>Products</span></a>
+				<div class="order-lg-last btn-group">
+					<a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="flaticon-shopping-bag"></span>
+						<div class="d-flex justify-content-center align-items-center"><small> </small><div id="cart-count"></div></div>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right" id="cart-items-menu">
+						<!-- Cart items will be dynamically added here -->
+						<a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
+							View All
+							<span class="ion-ios-arrow-round-forward"></span>
+						</a>
+					
+				</div>
+			</div>
 
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
@@ -175,17 +156,12 @@
 									<input type="text" class="form-control" name="towncity" placeholder="" required>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="postcodezip">Postcode / ZIP *</label>
-									<input type="text" class="form-control" name="postcodezip" placeholder="">
-								</div>
-							</div>
+							
 							<div class="w-100"></div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="phone">Phone</label>
-									<input type="text" class="form-control" name="phone" placeholder="" required>
+									<input type="text" class="form-control" name="phone" placeholder="07..... (preferabbly safaricom number)" required>
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -198,8 +174,8 @@
 							<div class="col-md-12">
 								<div class="form-group mt-4">
 									<div class="radio">
-										<label class="mr-3"><input type="radio" name="optradio" required> Around CBD Nairobi</label>
-										<label><input type="radio" name="optradio" required> Deliver to my address</label>
+										<label class="mr-3"><input type="radio" id="deliveryAroundCbd" name="optradio" required> Around CBD Nairobi</label>
+										<label><input type="radio" id="delivertToAdress" name="optradio" required> Deliver to my address</label>
 									</div>
 								</div>
 							</div>
@@ -233,28 +209,22 @@
 									<div class="form-group">
 										<div class="col-md-12">
 											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2" required> Lipa Na MPESA</label>
+											   <label><input type="radio" id="lipaNaMpesa" name="paymentMethod"class="mr-2" required> Lipa Na MPESA <p>POCHI LA BIASHARA</p><p>0716432994-SECLAS</p></label>
 											</div>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
 											<div class="radio">
-											   <label><input type="radio" name="optradio" class="mr-2" required> Payment on Delivery</label>
+											   <label><input type="radio" id="paymentOnDelivery"  name="paymentMethod" class="mr-2" required> Payment on Delivery</label>
 											</div>
 										</div>
 									</div>
-									<div class="form-group">
-										<div class="col-md-12">
-											<div class="radio">
-											  
-											</div>
-										</div>
-									</div>
+									
 									<div class="form-group">
 										<div class="col-md-12">
 											<div class="checkbox">
-											   <label><input type="checkbox" value="" class="mr-2" required> I have read and accept the terms and conditions</label>
+											   <label><input type="checkbox" value="" class="mr-2" required> I  accept to the terms and conditions</label>
 											</div>
 										</div>
 									</div>
@@ -275,9 +245,8 @@
 				  <h2 class="ftco-heading-2 logo"><a href="#">Psych  Household Products</a></h2>
 				  <p>Quality and Style Within Reach.</p>
 				  <ul class="ftco-footer-social list-unstyled mt-2">
-					<li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-					<li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-					<li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+					<li class="ftco-animate"><a href="https://www.facebook.com/profile.php?id=61553875617499&mibextid=ZbWKwL"><span class="fa fa-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/psych_households?igsh=MXM5MzQweHdkNm9udA=="><span class="fa fa-instagram"></span></a></li>
 				  </ul>
 				</div>
 			  </div>
@@ -285,7 +254,7 @@
 				<div class="ftco-footer-widget mb-4 ml-md-4">
 				  <h2 class="ftco-heading-2">My Accounts</h2>
 				  <ul class="list-unstyled">
-					<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Order</a></li>
+					<li><a href="cart.html"><span class="fa fa-chevron-right mr-2"></span>My Order</a></li>
 				  </ul>
 				</div>
 			  </div>
@@ -293,10 +262,10 @@
 				<div class="ftco-footer-widget mb-4 ml-md-4">
 				  <h2 class="ftco-heading-2">Information</h2>
 				  <ul class="list-unstyled">
-					<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
-					<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
-					<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
-					<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
+					<li><a href="about.html"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
+					<li><a href="product.html"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
+					<li><a href="contact.html"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
+					<li><a href="contact.html"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
 				  </ul>
 				</div>
 			  </div>
@@ -304,9 +273,9 @@
 				 <div class="ftco-footer-widget mb-4">
 				  <h2 class="ftco-heading-2">Quick Links</h2>
 				  <ul class="list-unstyled">
-					<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help Center</a></li>
-					<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Report Spam</a></li>
-					<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Faq's</a></li>
+					<li><a href="contact.html"><span class="fa fa-chevron-right mr-2"></span>Help Center</a></li>
+					<li><a href="contact.html"><span class="fa fa-chevron-right mr-2"></span>Report Spam</a></li>
+					
 				  </ul>
 				</div>
 			  </div>
@@ -316,8 +285,9 @@
 					<div class="block-23 mb-3">
 					  <ul>
 						<li><span class="icon fa fa-map marker"></span><span class="text">Accra Road,Superior Arcade, Nairobi, Kenya</span></li>
-						<li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+254 716432994</span></a></li>
-						<li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">psychhouseholds@gmail.com</span></a></li>
+						<li><a href="tel:+254716432994"><span class="icon fa fa-phone"></span><span class="text">+254 716432994</span></a></li>
+
+						<li><a href="mailto:psychhouseholds@gmail.com"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">psychhouseholds@gmail.com</span></a></li>
 					  </ul>
 					</div>
 				</div>
@@ -366,21 +336,43 @@
     document.addEventListener("DOMContentLoaded", function() {
         // Function to store billing details in localStorage
         function storeBillingDetails() {
-			console.log("saving billing details")
+            console.log("saving billing details");
             // Retrieve form input values
             const firstName = document.querySelector('input[name="firstname"]').value;
-			console.log(firstName)
             const lastName = document.querySelector('input[name="lastname"]').value;
             const country = document.querySelector('select[name="country"]').value;
-            const streetAddress = document.querySelector('input[name="streetaddress"]').value || ''; // Default value if empty
-            const apartment = document.querySelector('input[name="apartment"]').value || ''; // Default value if empty
+            const streetAddress = document.querySelector('input[name="streetaddress"]').value || '';
+            const apartment = document.querySelector('input[name="apartment"]').value || '';
             const townCity = document.querySelector('input[name="towncity"]').value;
-            const postcodeZIP = document.querySelector('input[name="postcodezip"]').value || ''; // Default value if empty
+            //const postcodeZIP = document.querySelector('input[name="postcodezip"]').value || '';
             const phone = document.querySelector('input[name="phone"]').value;
+			let formattedphone = '254' + phone.slice(1);
+			console.log(formattedphone)
             const emailAddress = document.querySelector('input[name="emailaddress"]').value;
-            const deliveryOption = document.querySelector('input[name="optradio"]:checked').value;
-			console.log("First Name:", firstName, "Last Name:", lastName, "Country:", country, "Street Address:", streetAddress, "Apartment:", apartment, "Town/City:", townCity, "Postcode/ZIP:", postcodeZIP, "Phone:", phone, "Email Address:", emailAddress, "Delivery Option:", deliveryOption);
+            const deliveryAroundCbd = document.querySelector('#deliveryAroundCbd').checked;
+			const delivertToAdress=document.querySelector('#delivertToAdress').checked;
+			let deliveryOption;
 
+			if (deliveryAroundCbd) {
+				deliveryOption = "Delivery around CBD";
+			} else if (delivertToAdress) {
+				deliveryOption = "Delivery to address";
+			}
+
+
+			const lipaNaMpesaRadio = document.querySelector('#lipaNaMpesa').checked;
+
+
+			console.log(lipaNaMpesaRadio)
+			const paymentOnDeliveryRadio = document.querySelector('#paymentOnDelivery').checked;
+			console.log(paymentOnDeliveryRadio)
+			let paymentMethod;
+
+			if (lipaNaMpesaRadio) {
+				paymentMethod = "Pochi la biashara (0716432994-SECLAS)";
+			} else if (paymentOnDeliveryRadio) {
+				paymentMethod = "Payment on Delivery";
+			}
 
             // Create an object to store billing details
             const billingDetails = {
@@ -390,15 +382,124 @@
                 streetAddress: streetAddress,
                 apartment: apartment,
                 townCity: townCity,
-                postcodeZIP: postcodeZIP,
-                phone: phone,
+                //postcodeZIP: postcodeZIP,
+                phone: formattedphone,
                 emailAddress: emailAddress,
-                deliveryOption: deliveryOption
+                deliveryOption: deliveryOption,
+				paymentMethod: paymentMethod
             };
 
-            // Store billing details in localStorage
             localStorage.setItem('billingDetails', JSON.stringify(billingDetails));
+
+            // Clear cartItems in localStorage
+            //localStorage.removeItem('cartItems');
+
+            // Get checkedItemsData from localStorage
+            const checkedItemsData = JSON.parse(localStorage.getItem('checkedItemsData'));
+
+            // Send SMS with billing details and checked items
+            sendSMS(billingDetails, checkedItemsData);
         }
+
+        // Function to send SMS
+        function sendSMS(billingDetails, checkedItemsData) {
+			console.log("sending sms")
+            //const tel_no = "254112100378"; // Replace with recipient's phone number
+			const tel_no = billingDetails.phone;
+			console.log(tel_no)
+			const total = localStorage.getItem('cartTotal');
+
+            let itemsList = "";
+            checkedItemsData.forEach(item => {
+                itemsList += `Name: ${item.name}\n` +
+                             `Description: ${item.description || ""}\n` +
+                             `Price: ${item.price}\n` +
+                             `Quantity: ${item.quantity}\n` +
+                             `Total: ${item.total}\n\n`;
+            });
+
+            const payload = {
+                "userid": "Willy",
+                "password": "GX98BFfh",
+                "senderid": "KINYATHENA",
+                "msgType": "text",
+                "duplicatecheck": "true",
+                "sendMethod": "quick",
+                "sms": [
+                    {
+                        "mobile": [tel_no],
+                        "msg": `Dear Customer,\n\n` +
+                               `Thank you for your order!\n\n` +
+                               `Billing Details:\n` +
+                               `First Name: ${billingDetails.firstName || ""}\n` +
+								`Last Name: ${billingDetails.lastName || ""}\n` +
+								`Country: ${billingDetails.country || ""}\n` +
+								`Street Address: ${billingDetails.streetAddress || ""}\n` +
+								`Apartment: ${billingDetails.apartment || ""}\n` +
+								`Town/City: ${billingDetails.townCity || ""}\n` +
+								`Phone: ${billingDetails.phone || ""}\n` +
+								`Email Address: ${billingDetails.emailAddress || ""}\n` +
+								`Delivery Option: ${billingDetails.deliveryOption || ""}\n\n` +
+								`Delivery Option: ${billingDetails.paymentMethod|| ""}\n\n` +
+                               `Checked Items:\n${itemsList}` +
+							   `Total Price for all goods ordered:\n${total}` 
+                              
+                    },
+					{
+						"mobile": [254115721877],
+                        "msg": 
+                               `A client has placed an  order!\n\n` +
+                               `Billing Details:\n` +
+                               `First Name: ${billingDetails.firstName || ""}\n` +
+								`Last Name: ${billingDetails.lastName || ""}\n` +
+								`Country: ${billingDetails.country || ""}\n` +
+								`Street Address: ${billingDetails.streetAddress || ""}\n` +
+								`Apartment: ${billingDetails.apartment || ""}\n` +
+								`Town/City: ${billingDetails.townCity || ""}\n` +
+								`Phone: ${billingDetails.phone || ""}\n` +
+								`Email Address: ${billingDetails.emailAddress || ""}\n` +
+								`Delivery Option: ${billingDetails.deliveryOption || ""}\n\n` +
+								`Delivery Option: ${billingDetails.paymentMethod|| ""}\n\n` +
+                               `Checked Items:\n${itemsList}` +
+							   `Total Price for all goods:\n${total}` 
+                              
+                    }
+                ]
+            };
+
+            const jsonPayload = JSON.stringify(payload);
+			console.log(jsonPayload)
+			
+			const url = 'https://corsproxy.io/?' + encodeURIComponent('https://portal.zettatel.com/SMSApi/send');
+
+			// Set the headers
+			
+
+            fetch(url, {
+				method: 'POST',
+				headers: {
+        'Content-Type': 'application/json' // Make sure this is set correctly
+    },
+				body: jsonPayload,
+				mode: 'cors'
+			})
+			.then(response => {
+				if (response.ok) {
+					console.log("SMS sent successfully.");
+					alert("Order placed successfully");
+					localStorage.removeItem('cartItems');
+					localStorage.removeItem('checkedItemsData');
+				} else {
+					console.error("Failed to send SMS. Response status code:", response.status);
+					alert("Order  not placed check your internet and fill all billing details");
+				}
+			})
+			.catch(error => {
+				console.error('Error sending SMS:', error);
+			});
+        }
+			
+	
 
         // Add event listener to "Place an order" button
         const placeOrderButton = document.querySelector('.btn-primary');
@@ -406,8 +507,31 @@
             event.preventDefault(); // Prevent default form submission
             storeBillingDetails(); // Call function to store billing details
             // Optionally, redirect to a confirmation page or perform other actions
-        });
-    });
+			 // Redirect to index.html
+			 setTimeout(() => {
+				window.location.href = 'index.html';
+			}, 10000); // 10000 milliseconds = 10 seconds
+		});
+
+		});
+       
+    
+</script>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve cart items from localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    // Get the count of cart items
+    const itemCount = cartItems.length;
+
+    // Select the HTML element where you want to display the count
+    const cartCountElement = document.getElementById('cart-count');
+
+    // Update the HTML with the count
+    cartCountElement.textContent = itemCount.toString();
+});
 </script>
 
   <script src="js/jquery.min.js"></script>
