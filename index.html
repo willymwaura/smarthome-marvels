@@ -49,19 +49,17 @@
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 			<a class="navbar-brand" href="index.html">Psych <span>Household <span>Products</span></a>
+			<a href="cart.html">
 			<div class="order-lg-last btn-group">
-				<a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<a href="cart.html" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<span class="flaticon-shopping-bag"></span>
 					<div class="d-flex justify-content-center align-items-center"><small> </small><div id="cart-count"></div></div>
 				</a>
-				<div class="dropdown-menu dropdown-menu-right" id="cart-items-menu">
-					<!-- Cart items will be dynamically added here -->
-					<a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
-						View All
-						<span class="ion-ios-arrow-round-forward"></span>
-					</a>
+				<div >
+					
 				
 			</div>
+			</a>
 		</div>
 
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -682,47 +680,21 @@
 });
 </script>
 
+
+
 <script>
-    // JavaScript
-    function populateCartItems() {
-        console.log("showing mini cart items");
-        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        const cartItemsMenu = document.getElementById('cart-items-menu');
-
-        // Clear the existing content of the dropdown menu
-        cartItemsMenu.innerHTML = '';
-
-        if (cartItems.length === 0) {
-            // If no items in cart, show "Empty Cart" message
-            cartItemsMenu.innerHTML = '<div class="dropdown-item">Empty Cart</div>';
-        } else {
-            // Display up to 3 items from the cart
-            for (let i = 0; i < Math.min(cartItems.length, 3); i++) {
-                const item = cartItems[i];
-                // Remove the "url(" and ")" wrapper from the image URL
-                const imageUrl = item.image.replace(/^url\(\"(.*)\"\)$/, '$1');
-                const dropdownItem = document.createElement('div');
-                dropdownItem.classList.add('dropdown-item', 'd-flex', 'align-items-start');
-                dropdownItem.innerHTML = `
-                    <div class="img" style="background-image: url(${imageUrl});"></div>
-                    <div class="text pl-3">
-                        <h4>${item.name}</h4>
-                        <p class="mb-0"><a href="#" class="price">${item.price}</a><span class="quantity ml-3">Quantity: ${item.quantity}</span></p>
-                    </div>`;
-                cartItemsMenu.appendChild(dropdownItem);
-            }
-            // Add a "View All" link
-            const viewAllLink = document.createElement('a');
-            viewAllLink.classList.add('dropdown-item', 'text-center', 'btn-link', 'd-block', 'w-100');
-            viewAllLink.href = 'cart.html';
-            viewAllLink.innerHTML = `View All <span class="ion-ios-arrow-round-forward"></span>`;
-            cartItemsMenu.appendChild(viewAllLink);
-        }
-    }
-    
-    // Call the function when the page loads
     document.addEventListener("DOMContentLoaded", function() {
-        populateCartItems();
+        // Get the link element
+        var cartLink = document.querySelector('.btn-cart');
+
+        // Add click event listener
+        cartLink.addEventListener('click', function(event) {
+            // Prevent the default action of the link
+            event.preventDefault();
+
+            // Redirect to the cart.html page
+            window.location.href = cartLink.href;
+        });
     });
 </script>
 

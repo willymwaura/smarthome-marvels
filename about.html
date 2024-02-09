@@ -47,40 +47,19 @@
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Psych <span>Households Products</span></a>
-	      <div class="order-lg-last btn-group">
-          <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          	<span class="flaticon-shopping-bag"></span>
-          	<div class="d-flex justify-content-center align-items-center"><small></small></div>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right">
-			<div class="dropdown-item d-flex align-items-start" href="#">
-				<div class="img" style="background-image: url(img/dispenser.jpg.jfif);"></div>
-				<div class="text pl-3">
-					<h4>Electric Water Pump</h4>
-					<p class="mb-0"><a href="#" class="price">Ksh 999/=</a><span class="quantity ml-3">Quantity: 01</span></p>
-				</div>
+			<a class="navbar-brand" href="index.html">Psych <span>Household <span>Products</span></a>
+			<a href="cart.html">
+			<div class="order-lg-last btn-group">
+				<a href="cart.html" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="flaticon-shopping-bag"></span>
+					<div class="d-flex justify-content-center align-items-center"><small> </small><div id="cart-count"></div></div>
+				</a>
+				<div >
+					
+				
 			</div>
-			<div class="dropdown-item d-flex align-items-start" href="#">
-				<div class="img" style="background-image: url(img/bg-households-1.jpg-removebg-preview.png);"></div>
-				<div class="text pl-3">
-					<h4>Kitchen Cookware</h4>
-					<p class="mb-0"><a href="#" class="price">Ksh 19800/=</a><span class="quantity ml-3">Quantity: 02</span></p>
-				</div>
-			</div>
-			<div class="dropdown-item d-flex align-items-start" href="#">
-				<div class="img" style="background-image: url(img/multilayershoerack.jpg.jfif);"></div>
-				<div class="text pl-3">
-					<h4>Multi-layered Shoerack</h4>
-					<p class="mb-0"><a href="#" class="price">Ksh 2000/= -2800/=</a><span class="quantity ml-3">Quantity: 03</span></p>
-				</div>
-			</div>
-			<a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
-				View All
-				<span class="ion-ios-arrow-round-forward"></span>
 			</a>
-		  </div>
-        </div>
+		</div>
 
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
@@ -306,7 +285,36 @@
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the link element
+        var cartLink = document.querySelector('.btn-cart');
 
+        // Add click event listener
+        cartLink.addEventListener('click', function(event) {
+            // Prevent the default action of the link
+            event.preventDefault();
+
+            // Redirect to the cart.html page
+            window.location.href = cartLink.href;
+        });
+    });
+</script>
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+	// Retrieve cart items from localStorage
+	const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+	// Get the count of cart items
+	const itemCount = cartItems.length;
+
+	// Select the HTML element where you want to display the count
+	const cartCountElement = document.getElementById('cart-count');
+
+	// Update the HTML with the count
+	cartCountElement.textContent = itemCount.toString();
+});
+</script>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>

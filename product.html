@@ -49,20 +49,20 @@
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Psych <span>Household Products</span></a>
-	      <div class="order-lg-last btn-group">
-          <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          	<span class="flaticon-shopping-bag"></span>
-			  <div class="d-flex justify-content-center align-items-center"><small> </small><div id="cart-count"></div></div>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" id="cart-items-menu">
-			
-			<a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
-				View All
-				<span class="ion-ios-arrow-round-forward"></span>
+			<a class="navbar-brand" href="index.html">Psych <span>Household <span>Products</span></a>
+			<a href="cart.html">
+			<div class="order-lg-last btn-group">
+				<a href="cart.html" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="flaticon-shopping-bag"></span>
+					<div class="d-flex justify-content-center align-items-center"><small> </small><div id="cart-count"></div></div>
+				</a>
+				<div >
+					
+				
+			</div>
 			</a>
-		  </div>
-        </div>
+		</div>
+
 
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
@@ -513,7 +513,7 @@
 							<span class="seller"></span>
 							<span class="category"></span>
 							<h2>Glass Brush</h2>
-							<p class="mb-0"><span class="price">0 Ksh/=</span></p>
+							<p class="mb-0"><span class="price">1000 Ksh/=</span></p>
 						</div>
 					</div>
 				</div>
@@ -1158,6 +1158,22 @@
         const priceElement = productElement.querySelector('.price:last-child');
         return priceElement ? priceElement.textContent.trim() : ''; // Return the price or an empty string if not found
     }
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the link element
+        var cartLink = document.querySelector('.btn-cart');
+
+        // Add click event listener
+        cartLink.addEventListener('click', function(event) {
+            // Prevent the default action of the link
+            event.preventDefault();
+
+            // Redirect to the cart.html page
+            window.location.href = cartLink.href;
+        });
+    });
 </script>
 
 
