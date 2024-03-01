@@ -54,7 +54,7 @@
 	      <div class="order-lg-last btn-group">
           <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           	<span class="flaticon-shopping-bag"></span>
-          	<div class="d-flex justify-content-center align-items-center"><small>3</small></div>
+          	<div class="d-flex justify-content-center align-items-center"><small>Cart: </small><div id="cart-count"></div></div>
           </a>
           <div class="dropdown-menu dropdown-menu-right">
 				    <div class="dropdown-item d-flex align-items-start" href="#">
@@ -366,21 +366,18 @@
     document.addEventListener("DOMContentLoaded", function() {
         // Function to store billing details in localStorage
         function storeBillingDetails() {
-			console.log("saving billing details")
+            console.log("saving billing details");
             // Retrieve form input values
             const firstName = document.querySelector('input[name="firstname"]').value;
-			console.log(firstName)
             const lastName = document.querySelector('input[name="lastname"]').value;
             const country = document.querySelector('select[name="country"]').value;
-            const streetAddress = document.querySelector('input[name="streetaddress"]').value || ''; // Default value if empty
-            const apartment = document.querySelector('input[name="apartment"]').value || ''; // Default value if empty
+            const streetAddress = document.querySelector('input[name="streetaddress"]').value || '';
+            const apartment = document.querySelector('input[name="apartment"]').value || '';
             const townCity = document.querySelector('input[name="towncity"]').value;
-            const postcodeZIP = document.querySelector('input[name="postcodezip"]').value || ''; // Default value if empty
+            const postcodeZIP = document.querySelector('input[name="postcodezip"]').value || '';
             const phone = document.querySelector('input[name="phone"]').value;
             const emailAddress = document.querySelector('input[name="emailaddress"]').value;
             const deliveryOption = document.querySelector('input[name="optradio"]:checked').value;
-			console.log("First Name:", firstName, "Last Name:", lastName, "Country:", country, "Street Address:", streetAddress, "Apartment:", apartment, "Town/City:", townCity, "Postcode/ZIP:", postcodeZIP, "Phone:", phone, "Email Address:", emailAddress, "Delivery Option:", deliveryOption);
-
 
             // Create an object to store billing details
             const billingDetails = {
@@ -396,9 +393,112 @@
                 deliveryOption: deliveryOption
             };
 
-            // Store billing details in localStorage
             localStorage.setItem('billingDetails', JSON.stringify(billingDetails));
+
+            // Clear cartItems in localStorage
+            localStorage.removeItem('cartItems');
+
+            // Get checkedItemsData from localStorage
+            const checkedItemsData = JSON.parse(localStorage.getItem('checkedItemsData'));
+
+            // Send SMS with billing details and checked items
+            sendSMS(billingDetails, checkedItemsData);
         }
+
+        // Function to send SMS
+        function sendSMS(billingDetails, checkedItemsData) {
+			console.log("sending sms")
+            const tel_no = "254112100378"; // Replace with recipient's phone number
+			const total = localStorage.getItem('cartTotal');
+
+            let itemsList = "";
+            checkedItemsData.forEach(item => {
+                itemsList += `Name: ${item.name}\n` +
+                             `Description: ${item.description || ""}\n` +
+                             `Price: ${item.price}\n` +
+                             `Quantity: ${item.quantity}\n` +
+                             `Total: ${item.total}\n\n`;
+            });
+
+            const payload = {
+                "userid": "Willy",
+                "password": "GX98BFfh",
+                "senderid": "KINYATHENA",
+                "msgType": "text",
+                "duplicatecheck": "true",
+                "sendMethod": "quick",
+                "sms": [
+                    {
+                        "mobile": [tel_no],
+                        "msg": `Dear Member,\n\n` +
+                               `Thank you for your order!\n\n` +
+                               `Billing Details:\n` +
+                               `First Name: ${billingDetails.firstName || ""}\n` +
+								`Last Name: ${billingDetails.lastName || ""}\n` +
+								`Country: ${billingDetails.country || ""}\n` +
+								`Street Address: ${billingDetails.streetAddress || ""}\n` +
+								`Apartment: ${billingDetails.apartment || ""}\n` +
+								`Town/City: ${billingDetails.townCity || ""}\n` +
+								`Postcode/ZIP: ${billingDetails.postcodeZIP || ""}\n` +
+								`Phone: ${billingDetails.phone || ""}\n` +
+								`Email Address: ${billingDetails.emailAddress || ""}\n` +
+								`Delivery Option: ${billingDetails.deliveryOption || ""}\n\n` +
+                               `Checked Items:\n${itemsList}` +
+							   `Total Price for all goods:\n${total}` 
+                              
+                    },
+					{
+                        "mobile": [254115721877],
+                        "msg": 
+                               `A client has placed an  order!\n\n` +
+                               `Billing Details:\n` +
+                               `First Name: ${billingDetails.firstName || ""}\n` +
+								`Last Name: ${billingDetails.lastName || ""}\n` +
+								`Country: ${billingDetails.country || ""}\n` +
+								`Street Address: ${billingDetails.streetAddress || ""}\n` +
+								`Apartment: ${billingDetails.apartment || ""}\n` +
+								`Town/City: ${billingDetails.townCity || ""}\n` +
+								`Postcode/ZIP: ${billingDetails.postcodeZIP || ""}\n` +
+								`Phone: ${billingDetails.phone || ""}\n` +
+								`Email Address: ${billingDetails.emailAddress || ""}\n` +
+								`Delivery Option: ${billingDetails.deliveryOption || ""}\n\n` +
+                               `Checked Items:\n${itemsList}` +
+							   `Total Price for all goods:\n${total}` 
+                              
+                    }
+                ]
+            };
+
+            const jsonPayload = JSON.stringify(payload);
+			console.log(jsonPayload)
+			
+			const url = 'https://corsproxy.io/?' + encodeURIComponent('https://portal.zettatel.com/SMSApi/send');
+
+			// Set the headers
+			
+
+            fetch(url, {
+				method: 'POST',
+				headers: {
+        'Content-Type': 'application/json' // Make sure this is set correctly
+    },
+				body: jsonPayload,
+				mode: 'cors'
+			})
+			.then(response => {
+				if (response.ok) {
+					console.log("SMS sent successfully.");
+				} else {
+					console.error("Failed to send SMS. Response status code:", response.status);
+				}
+			})
+			.catch(error => {
+				console.error('Error sending SMS:', error);
+			});
+        }
+		
+			
+	
 
         // Add event listener to "Place an order" button
         const placeOrderButton = document.querySelector('.btn-primary');
@@ -406,8 +506,31 @@
             event.preventDefault(); // Prevent default form submission
             storeBillingDetails(); // Call function to store billing details
             // Optionally, redirect to a confirmation page or perform other actions
-        });
-    });
+			 // Redirect to index.html
+			 setTimeout(() => {
+				window.location.href = 'index.html';
+			}, 10000); // 10000 milliseconds = 10 seconds
+		});
+
+		});
+       
+    
+</script>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve cart items from localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    // Get the count of cart items
+    const itemCount = cartItems.length;
+
+    // Select the HTML element where you want to display the count
+    const cartCountElement = document.getElementById('cart-count');
+
+    // Update the HTML with the count
+    cartCountElement.textContent = itemCount.toString();
+});
 </script>
 
   <script src="js/jquery.min.js"></script>
