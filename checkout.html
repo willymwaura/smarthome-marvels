@@ -48,44 +48,6 @@
 			</div>
 		</div>
     
-<<<<<<< HEAD
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Psych <span>Household Products</span></a>
-	      <div class="order-lg-last btn-group">
-          <a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          	<span class="flaticon-shopping-bag"></span>
-          	<div class="d-flex justify-content-center align-items-center"><small>Cart: </small><div id="cart-count"></div></div>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right">
-				    <div class="dropdown-item d-flex align-items-start" href="#">
-				    	<div class="img" style="background-image: url(img/dispenser.jpg.jfif);"></div>
-				    	<div class="text pl-3">
-				    		<h4>Electric Water Pump</h4>
-				    		<p class="mb-0"><a href="#" class="price">Ksh 999/=</a><span class="quantity ml-3">Quantity: 01</span></p>
-				    	</div>
-				    </div>
-				    <div class="dropdown-item d-flex align-items-start" href="#">
-				    	<div class="img" style="background-image: url(img/bg-households-1.jpg-removebg-preview.png);"></div>
-				    	<div class="text pl-3">
-				    		<h4>Kitchen Cookware</h4>
-				    		<p class="mb-0"><a href="#" class="price">Ksh 19800/=</a><span class="quantity ml-3">Quantity: 02</span></p>
-				    	</div>
-				    </div>
-				    <div class="dropdown-item d-flex align-items-start" href="#">
-				    	<div class="img" style="background-image: url(img/multilayershoerack.jpg.jfif);"></div>
-				    	<div class="text pl-3">
-				    		<h4>Multi-layered Shoerack</h4>
-				    		<p class="mb-0"><a href="#" class="price">Ksh 2000/= -2800/=</a><span class="quantity ml-3">Quantity: 03</span></p>
-				    	</div>
-				    </div>
-				    <a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
-				    	View All
-				    	<span class="ion-ios-arrow-round-forward"></span>
-				    </a>
-				  </div>
-        </div>
-=======
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 			<div class="container">
 				<a class="navbar-brand" href="index.html">Psych <span>Households</span></a>
@@ -103,7 +65,6 @@
 					
 				</div>
 			</div>
->>>>>>> e41dfe117476ceda7a2948fec260cbf2af8bd30e
 
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
@@ -383,18 +344,11 @@
             const streetAddress = document.querySelector('input[name="streetaddress"]').value || '';
             const apartment = document.querySelector('input[name="apartment"]').value || '';
             const townCity = document.querySelector('input[name="towncity"]').value;
-<<<<<<< HEAD
-            const postcodeZIP = document.querySelector('input[name="postcodezip"]').value || '';
-=======
             //const postcodeZIP = document.querySelector('input[name="postcodezip"]').value || '';
->>>>>>> e41dfe117476ceda7a2948fec260cbf2af8bd30e
             const phone = document.querySelector('input[name="phone"]').value;
 			let formattedphone = '254' + phone.slice(1);
 			console.log(formattedphone)
             const emailAddress = document.querySelector('input[name="emailaddress"]').value;
-<<<<<<< HEAD
-            const deliveryOption = document.querySelector('input[name="optradio"]:checked').value;
-=======
             const deliveryAroundCbd = document.querySelector('#deliveryAroundCbd').checked;
 			const delivertToAdress=document.querySelector('#delivertToAdress').checked;
 			let deliveryOption;
@@ -419,7 +373,6 @@
 			} else if (paymentOnDeliveryRadio) {
 				paymentMethod = "Payment on Delivery";
 			}
->>>>>>> e41dfe117476ceda7a2948fec260cbf2af8bd30e
 
             // Create an object to store billing details
             const billingDetails = {
@@ -439,11 +392,7 @@
             localStorage.setItem('billingDetails', JSON.stringify(billingDetails));
 
             // Clear cartItems in localStorage
-<<<<<<< HEAD
-            localStorage.removeItem('cartItems');
-=======
             //localStorage.removeItem('cartItems');
->>>>>>> e41dfe117476ceda7a2948fec260cbf2af8bd30e
 
             // Get checkedItemsData from localStorage
             const checkedItemsData = JSON.parse(localStorage.getItem('checkedItemsData'));
@@ -455,13 +404,9 @@
         // Function to send SMS
         function sendSMS(billingDetails, checkedItemsData) {
 			console.log("sending sms")
-<<<<<<< HEAD
-            const tel_no = "254112100378"; // Replace with recipient's phone number
-=======
             //const tel_no = "254112100378"; // Replace with recipient's phone number
 			const tel_no = billingDetails.phone;
 			console.log(tel_no)
->>>>>>> e41dfe117476ceda7a2948fec260cbf2af8bd30e
 			const total = localStorage.getItem('cartTotal');
 
             let itemsList = "";
@@ -483,27 +428,6 @@
                 "sms": [
                     {
                         "mobile": [tel_no],
-<<<<<<< HEAD
-                        "msg": `Dear Member,\n\n` +
-                               `Thank you for your order!\n\n` +
-                               `Billing Details:\n` +
-                               `First Name: ${billingDetails.firstName || ""}\n` +
-								`Last Name: ${billingDetails.lastName || ""}\n` +
-								`Country: ${billingDetails.country || ""}\n` +
-								`Street Address: ${billingDetails.streetAddress || ""}\n` +
-								`Apartment: ${billingDetails.apartment || ""}\n` +
-								`Town/City: ${billingDetails.townCity || ""}\n` +
-								`Postcode/ZIP: ${billingDetails.postcodeZIP || ""}\n` +
-								`Phone: ${billingDetails.phone || ""}\n` +
-								`Email Address: ${billingDetails.emailAddress || ""}\n` +
-								`Delivery Option: ${billingDetails.deliveryOption || ""}\n\n` +
-                               `Checked Items:\n${itemsList}` +
-							   `Total Price for all goods:\n${total}` 
-                              
-                    },
-					{
-                        "mobile": [254115721877],
-=======
                         "msg": `Dear Customer,\n\n` +
                                `Thank you for your order!\n\n` +
                                `Checked Items:\n${itemsList}` +
@@ -512,7 +436,6 @@
                     },
 					{
 						"mobile": [254716432994],
->>>>>>> e41dfe117476ceda7a2948fec260cbf2af8bd30e
                         "msg": 
                                `A client has placed an  order!\n\n` +
                                `Billing Details:\n` +
@@ -522,17 +445,10 @@
 								`Street Address: ${billingDetails.streetAddress || ""}\n` +
 								`Apartment: ${billingDetails.apartment || ""}\n` +
 								`Town/City: ${billingDetails.townCity || ""}\n` +
-<<<<<<< HEAD
-								`Postcode/ZIP: ${billingDetails.postcodeZIP || ""}\n` +
-								`Phone: ${billingDetails.phone || ""}\n` +
-								`Email Address: ${billingDetails.emailAddress || ""}\n` +
-								`Delivery Option: ${billingDetails.deliveryOption || ""}\n\n` +
-=======
 								`Phone: ${billingDetails.phone || ""}\n` +
 								`Email Address: ${billingDetails.emailAddress || ""}\n` +
 								`Delivery Option: ${billingDetails.deliveryOption || ""}\n\n` +
 								`Delivery Option: ${billingDetails.paymentMethod|| ""}\n\n` +
->>>>>>> e41dfe117476ceda7a2948fec260cbf2af8bd30e
                                `Checked Items:\n${itemsList}` +
 							   `Total Price for all goods:\n${total}` 
                               
@@ -559,27 +475,18 @@
 			.then(response => {
 				if (response.ok) {
 					console.log("SMS sent successfully.");
-<<<<<<< HEAD
-				} else {
-					console.error("Failed to send SMS. Response status code:", response.status);
-=======
 					alert("Order placed successfully");
 					localStorage.removeItem('cartItems');
 					localStorage.removeItem('checkedItemsData');
 				} else {
 					console.error("Failed to send SMS. Response status code:", response.status);
 					alert("Order  not placed check your internet and fill all billing details");
->>>>>>> e41dfe117476ceda7a2948fec260cbf2af8bd30e
 				}
 			})
 			.catch(error => {
 				console.error('Error sending SMS:', error);
 			});
         }
-<<<<<<< HEAD
-		
-=======
->>>>>>> e41dfe117476ceda7a2948fec260cbf2af8bd30e
 			
 	
 
